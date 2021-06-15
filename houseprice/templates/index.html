@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> House Price Prediction System</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nicepage.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Homepage.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Contact.css' %}">
+	
+	
+</head>
+<body data-home-page="index.html" data-home-page-title="Homepage" class="u-body"><header class="u-align-left u-clearfix u-header u-section-row-container" id="sec-6b04"><div class="u-section-rows">
+  <div class="u-grey-70 u-section-row u-section-row-1" id="sec-46aa">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-social-icons u-spacing-10 u-social-icons-1"></div>
+      <nav data-position="" class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+          <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="#" style="padding: 2px 0px; font-size: calc(1em + 4px);">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'home' %}" style="padding: 10px 34px;">Homepage</a>
+</li></ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}" style="padding: 10px 20px;">Homepage</a>
+</li></ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+    
+  </div>
+  <div class="u-section-row u-section-row-2" id="sec-37e8">
+    <div class="u-clearfix u-sheet u-sheet-2">
+      <a href="{% url 'home' %}" class="u-image u-logo u-image-1" data-image-width="40" data-image-height="30">
+        {% load static %} <img src="{% static "images/deepout.png" %}" alt="home" />
+      </a>
+    </div> 
+  </div>
+</div></header>
+<section class="u-align-center u-clearfix u-section-1" id="sec-278c">
+<div class="u-clearfix u-sheet u-sheet-1">
+  <h1 class="u-text u-text-1">House Price Prediction System</h1>
+</div>
+</section>
+<section class="u-align-center u-clearfix u-section-2" id="sec-2a23">
+<div class="u-clearfix u-sheet u-sheet-1">
+  <div class="u-clearfix u-gutter-40 u-layout-wrap u-layout-wrap-1">
+    <div class="u-gutter-0 u-layout">
+      <div class="u-layout-row">
+        <div class="u-size-30">
+          <div class="u-layout-col">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+              <div class="u-container-layout u-container-layout-1">
+                <h3 class="u-text u-text-default u-text-1">Start Prediction</h3>
+                <div class="u-form u-form-1">
+                  <form action ="{% url 'result' %}" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px">
+                      	{% csrf_token %}
+                    <div class="u-form-group u-form-name u-form-group-1">
+                      <label for="name-5359" class="u-form-control-hidden u-label">Plotsize</label>
+                      <input class="u-border-1 u-border-grey-30 u-input u-input-rectangle" name="lotsize" maxlength="5" placeholder="Enter your Plotsize">
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-3">
+                      <label for="select-5c70" class="u-form-control-hidden u-label">Number of Bathroom</label>
+                      <div class="u-form-select-wrapper">
+                        <select id="" name="bathrms" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Select Number of Bathrooms</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-4">
+                      <label for="select-461c" class="u-form-control-hidden u-label">Number of floor</label>
+                      <div class="u-form-select-wrapper">
+                        <select id="" name="stories" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Select Number of floor</option>
+                            <option value="1">Floor 1</option>
+                            <option value="2">Floor 2</option>
+                            <option value="3">Floor 3</option>
+                            <option value="4">Floor 4</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-5">
+                      <label for="select-c6da" class="u-form-control-hidden u-label">Driveway</label>
+                      <div class="u-form-select-wrapper">
+                        <select id="" name="driveway" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Does it has Driveway</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-6">
+                      <label for="select-2ce6" class="u-form-control-hidden u-label">Recreation room</label>
+                      <div class="u-form-select-wrapper">
+                        <select id="" name="recroom" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Does it has recreation room</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-7">
+                      <label for="select-08f6" class="u-form-control-hidden u-label">Fullbasement</label>
+                      <div class="u-form-select-wrapper">
+                        <select id="" name="fullbase" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Does it has fullbasement</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-8">
+                      <label for="select-5412" class="u-form-control-hidden u-label">GasHot Water</label>
+                      <div class="u-form-select-wrapper">
+                        <select name="gashw" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Does it has GasHot Water</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-8">
+                      <label for="select-5412" class="u-form-control-hidden u-label">Air Conditioning</label>
+                      <div class="u-form-select-wrapper">
+                        <select  name="airco" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Does it has Air Conditioning</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-8">
+                      <label for="select-5412" class="u-form-control-hidden u-label">Garage Places</label>
+                      <div class="u-form-select-wrapper">
+                        <select  name="garagepl" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Select Number of Garage Places</option>
+							              <option value="0">Garage Places 0</option>
+				                    <option value="1">Garage Places 1</option>
+				                    <option value="2">Garage Places 2</option>
+                            <option value="3">Garage Places 3</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-form-group u-form-select u-form-group-8">
+                      <label for="select-5412" class="u-form-control-hidden u-label">Prefared Area</label>
+                      <div class="u-form-select-wrapper">
+                        <select name="prefarea" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+                          <option>Does it has Prefared Area in the city</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                      </div>
+                    </div>
+                    <div class="u-align-center u-form-group u-form-submit u-form-group-9">
+                      <div class="wrap-contact100-form-btn">
+                        <div class="contact100-form-bgbtn"></div>
+                        <button type="submit"   class="u-btn u-btn-submit u-button-style">
+                          <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+				          <h4 >Your House Price is ₹ <b>{{prediction}}</b></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-size-30">
+          <div class="u-layout-col">
+            <div class="u-align-left u-container-style u-image u-layout-cell u-right-cell u-size-40 u-image-1" data-image-width="100" data-image-height="854">
+              {% load static %} <img src="{% static "images/img.png" %}" alt="home" />
+              <div class="u-container-layout u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-db9f"><div class="u-clearfix u-sheet u-sheet-1">
+  {% load static %} <img src="{% static "images/deepout.png" %}" alt="home" />
+  <p class="u-small-text u-text u-text-variant u-text-1">
+    <br>&nbsp;© 2020-2021, Deepout.com, Inc. or its affiliates
+  </p>
+</div></footer>
+<section class="u-backlink u-clearfix u-grey-80"> 
+</section>
+</body>
+
+</html>
