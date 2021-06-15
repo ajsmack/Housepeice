@@ -1,3 +1,3 @@
 # Housepei
 
-![vid.GIF]
+![](vid.gif)
